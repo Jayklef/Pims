@@ -1,0 +1,95 @@
+﻿@model Pims.Models.Employee
+
+<form asp-action="Delete" method="post">
+    <input asp-for="Id" hidden />
+    <div class="border p-3">
+        <div class="form-group-row">
+            <h2 class="text-black-50 pl-3">Delete Employee Records</h2>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group row mb-4">
+                    <div class="col-6">
+                        <label asp-for="StaffNumber"></label>
+                        <input asp-for="StaffNumber" disabled class="form-control" />
+                        <span asp-validation-for="StaffNumber" class="text-danger"></span>
+                    </div>
+                    <div class="col-6">
+                        <label asp-for="GradeLevel"></label>
+                        <input asp-for="GradeLevel" disabled class="form-control" />
+                        <span asp-validation-for="GradeLevel" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row mb-4">
+                    <div class="col-6">
+                        <label asp-for="FirstName"></label>
+                        <input asp-for="FirstName" disabled class="form-control" />
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                    <div class="col-6">
+                        <label asp-for="LastName"></label>
+                        <input asp-for="LastName" disabled class="form-control" />
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row mb-4">
+                    <div class="col-6">
+                        <label asp-for="Email"></label>
+                        <input asp-for="Email" disabled class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="col-6">
+                        <label asp-for="Gender"></label>
+                        <select asp-for="Gender" disabled class="form-control">
+                            <option selected>Choose Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <span asp-validation-for="Gender" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row mb-4">
+                    <div class="col-6">
+                        <label asp-for="MaritalStatus"></label>
+                        <select asp-for="MaritalStatus" disabled class="form-control">
+                            <option selected>Choose Marital Status</option>
+                            <option value="Single">Single</option>
+                            <option value="Married">Married</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <span asp-validation-for="MaritalStatus" class="text-danger"></span>
+                    </div>
+                    <div class="col-6">
+                        <label asp-for="BirthDate"></label>
+                        <input asp-for="BirthDate" disabled class="form-control" />
+                        <span asp-validation-for="BirthDate" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row mb-4">
+                    <div class="col-6">
+                        <label asp-for="Address"></label>
+                        <input asp-for="Address" disabled class="form-control" />
+                        <span asp-validation-for="Address" class="text-danger"></span>
+                    </div>
+                    <div class="col-6">
+                        <label asp-for="Department"></label>
+                        <select asp-for="Department.DeptName" disabled asp-items="@ViewBag.Dropdown" class="form-control">
+                            <option selected>--Select Department--</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-12 offset-2 row">
+                        <div class="col-6">
+                            <input type="submit" value="Delete" class="btn btn-info w-50 " />
+                        </div>
+                        <div class="col-6">
+                            <a asp-action="Index" class="btn btn-success w-50">Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form> 

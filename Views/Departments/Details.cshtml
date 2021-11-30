@@ -1,0 +1,41 @@
+﻿@model Pims.Models.Department
+
+<div class="container">
+    <form action="Details" method="">
+        <input asp-for="Id" hidden />
+        <div class="form-group-row">
+            <h2 class="text-black-50 pl-3">Department Details</h2>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group row mb-4">
+                    <div class="col-6">
+                        <label asp-for="DeptId"></label>
+                        <input asp-for="DeptId" disabled class="form-control" />
+                        <span asp-validation-for="DeptId" class="text-danger"></span>
+                    </div>
+                    <div class="col-6">
+                        <label asp-for="DeptName"></label>
+                        <input asp-for="DeptName" disabled class="form-control" />
+                        <span asp-validation-for="DeptName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row mb-4">
+                    <div class="col-6">
+                        <label asp-for="Location"></label>
+                        <input asp-for="Location" disabled class="form-control" />
+                        <span asp-validation-for="Location" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <div class="col-10 offset-2 row">
+                        <div class="col">
+                            <a asp-action="Index" class="btn btn-danger w-50">Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,96 @@
+﻿@model Pims.Models.Employee
+
+<form asp-action="Create" method="post">
+    <div class="border p-3">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group-row">
+            <h2 class="text-black-50 pl-3">New Employee</h2>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group row mb-4">
+                    <div class="col-6">
+                        <label asp-for="StaffNumber"></label>
+                        <input asp-for="StaffNumber" class="form-control" />
+                        <span asp-validation-for="StaffNumber" class="text-danger"></span>
+                    </div>
+                    <div class="col-6">
+                        <label asp-for="GradeLevel"></label>
+                        <input asp-for="GradeLevel" class="form-control" />
+                        <span asp-validation-for="GradeLevel" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row mb-4">
+                    <div class="col-6">
+                        <label asp-for="FirstName"></label>
+                        <input asp-for="FirstName" class="form-control" />
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                    <div class="col-6">
+                        <label asp-for="LastName"></label>
+                        <input asp-for="LastName" class="form-control" />
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row mb-4">
+                    <div class="col-6">
+                        <label asp-for="Email"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="col-6">
+                        <label asp-for="Gender"></label>
+                        <select asp-for="Gender" class="form-control">
+                            <option selected>Choose Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <span asp-validation-for="Gender" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row mb-4">
+                    <div class="col-6">
+                        <label asp-for="MaritalStatus"></label>
+                        <select asp-for="MaritalStatus" class="form-control">
+                            <option selected>Choose Marital Status</option>
+                            <option value="Single">Single</option>
+                            <option value="Married">Married</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <span asp-validation-for="MaritalStatus" class="text-danger"></span>
+                    </div>
+                    <div class="col-6">
+                        <label asp-for="BirthDate"></label>
+                        <input asp-for="BirthDate" class="form-control" />
+                        <span asp-validation-for="BirthDate" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row mb-4">
+                    <div class="col-6">
+                        <label asp-for="Address"></label>
+                        <input asp-for="Address" class="form-control" />
+                        <span asp-validation-for="Address" class="text-danger"></span>
+                    </div>
+                    <div class="col-6">
+                        <label asp-for="Department"></label>
+                        <select asp-for="Department.DeptName" asp-items="@ViewBag.Dropdown" class="form-control">
+                            <option selected>--Select Department--</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-8 offset-2 row">
+                        <div class="col">
+                            <input type="submit" value="Create" class="btn btn-primary w-75" />
+                        </div>
+                        <div class="col">
+                            <a asp-action="Index" class="btn btn-danger w-75">Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</form>

@@ -1,0 +1,45 @@
+﻿@model Pims.Models.Department
+
+<form asp-action="Delete" method="post">
+    <input asp-for="Id" hidden />
+    <div class="border p-3">
+        <div class="form-group-row">
+            <h2 class="text-black-50 pl-3">Delete Department</h2>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group row mb-4">
+                    <div class="col-6">
+                        <label asp-for="DeptId"></label>
+                        <input asp-for="DeptId" class="form-control" />
+                        <span asp-validation-for="DeptId" class="text-danger"></span>
+                    </div>
+                    <div class="col-6">
+                        <label asp-for="DeptName"></label>
+                        <input asp-for="DeptName" class="form-control" />
+                        <span asp-validation-for="DeptName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row mb-4">
+                    <div class="col-6">
+                        <label asp-for="Location"></label>
+                        <input asp-for="Location" class="form-control" />
+                        <span asp-validation-for="Location" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <div class="col-12 offset-2 row">
+                        <div class="col-6">
+                            <input type="submit" value="Delete" class="btn btn-outline-info w-50 " />
+                        </div>
+                        <div class="col-6">
+                            <a asp-action="Index" class="btn btn-outline-success w-50">Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</form>
